@@ -1,20 +1,19 @@
 return {
 	"nicolasgb/jj.nvim",
 	dependencies = {
-		"folke/snacks.nvim", -- only needed for pickers
+		"folke/snacks.nvim",
 	},
 	config = function()
 		require("jj").setup({
-			-- Optional custom highlights
 			highlights = {
 				modified = { fg = "#89ddff" },
 			},
-			describe_editor = "buffer", -- or "input"
+			describe_editor = "buffer",
 		})
 
 		local cmd = require("jj.cmd")
 
-		-- JJ Commands
+		-- peak right here??
 		vim.keymap.set("n", "<leader>jd", cmd.describe, { desc = "JJ describe" })
 		vim.keymap.set("n", "<leader>jl", cmd.log, { desc = "JJ log" })
 		vim.keymap.set("n", "<leader>je", cmd.edit, { desc = "JJ edit" })
@@ -23,17 +22,14 @@ return {
 		vim.keymap.set("n", "<leader>dj", cmd.diff, { desc = "JJ diff" })
 		vim.keymap.set("n", "<leader>sj", cmd.squash, { desc = "JJ squash" })
 
-		-- Pickers (require snacks)
 		local picker = require("jj.picker")
 		vim.keymap.set("n", "<leader>gj", picker.status, { desc = "JJ Picker status" })
 		vim.keymap.set("n", "<leader>gl", picker.file_history, { desc = "JJ Picker file history" })
 
-		-- Example: log with params
 		vim.keymap.set("n", "<leader>jL", function()
 			cmd.log({ revisions = "all()" })
 		end, { desc = "JJ log all" })
 
-		-- Example: bookmark tug
 		vim.keymap.set("n", "<leader>jt", function()
 			cmd.j("tug")
 			cmd.log({})

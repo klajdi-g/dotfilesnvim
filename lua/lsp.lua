@@ -36,7 +36,7 @@ mason_lspconfig.setup({
 	ensure_installed = {
 		"ts_ls",
 		"eslint",
-		"vue_ls", -- new name instead of volar
+		"vue_ls",
 		"intelephense",
 		"clangd",
 		"omnisharp",
@@ -49,12 +49,10 @@ mason_lspconfig.setup({
 	},
 
 	handlers = {
-		-- default handler for all servers
 		function(server_name)
 			safe_setup(server_name)
 		end,
 
-		-- lua_ls with extra settings
 		["lua_ls"] = function()
 			safe_setup("lua_ls", {
 				settings = {

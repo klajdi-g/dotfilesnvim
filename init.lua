@@ -22,8 +22,6 @@ vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 -- vim.opt.guifont = "JetBrainsMono Nerd Font:h13"
 
--- vim.cmd("colorscheme enough")
-
 vim.defer_fn(function()
 	require("lsp")
 	require("cmpconfig")

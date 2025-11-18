@@ -5,7 +5,6 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" },
 	},
 
-	-- CMP
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = {
@@ -19,18 +18,15 @@ return {
 	},
 
 	{ "folke/tokyonight.nvim" },
-	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 	},
 
-	-- LSP
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
 	{ "neovim/nvim-lspconfig" },
 
-	-- Formatting
 	{ "stevearc/conform.nvim" },
 
 	{
