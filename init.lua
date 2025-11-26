@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 
+-- Lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -13,14 +14,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.opt.clipboard = "unnamedplus"
-
-require("lazy").setup("plugins")
-
 vim.opt.number = true
 vim.opt.relativenumber = true
-
 vim.opt.termguicolors = true
--- vim.opt.guifont = "JetBrainsMono Nerd Font:h13"
+
+require("lazy").setup("plugins")
 
 vim.defer_fn(function()
 	require("lsp")
