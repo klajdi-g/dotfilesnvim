@@ -1,4 +1,18 @@
 return {
+	{
+		"github/copilot.vim",
+		config = function()
+			-- Disable Tab mapping
+			vim.api.nvim_set_keymap("i", "<C-l>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+
+			-- Cycle suggestions safely
+			vim.api.nvim_set_keymap("i", "<C-j>", "copilot#Next()", { silent = true, expr = true })
+			vim.api.nvim_set_keymap("i", "<C-k>", "copilot#Previous()", { silent = true, expr = true })
+
+			-- Dismiss
+			vim.api.nvim_set_keymap("i", "<C-\\>", "copilot#Dismiss()", { silent = true, expr = true })
+		end,
+	},
 	-- Telescope
 	{
 		"nvim-telescope/telescope.nvim",
